@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry external="true" kind="lib" path="/var/www/html/basecamp-classic-api/lib/Sirprize/Basecamp"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry external="true" kind="lib" path="/var/www/html/zf2/library/Zend"/>
+	<buildpathentry kind="src" path=""/>
+</buildpath>
