@@ -1,0 +1,33 @@
+{
+    "name": "dlu/dlutwbootstrapdemo",
+    "description": "ZF2 module to check & demonstrate the DluTwBootstrap module (Twitter Bootstrap UI - forms, navigation, etc.)",
+    "license": "New-BSD-License",
+    "keywords": [
+        "dlutwbootstrap",
+        "dlutwbootstrapdemo",
+        "demo",
+        "twitter bootstrap",
+        "zf2",
+        "zend framework 2",
+        "module"
+    ],
+    "homepage": "https://bitbucket.org/dlu/dlutwbootstrap-demo",
+    "authors": [
+        {
+            "name": "David Lukas",
+            "homepage": "http://www.zfdaily.com"
+        }
+    ],
+    "require": {
+        "zendframework/zendframework": "dev-master",
+        "dlu/dlutwbootstrap": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "DluTwBootstrapDemo": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}

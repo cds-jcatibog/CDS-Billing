@@ -1,0 +1,68 @@
+<?php
+//Prepare Display options to fine tune the form presentation
+//This is optional, your form can be rendered without any display options
+$displayOptions = array(
+    //The class attribute added to the form tag
+    //'class'                 => 'my-form-class',
+    'elements'              => array(
+        'text'      => array(
+            'class'     => 'input-small',
+        ),
+        'password'  => array(
+            'class'     => 'input-small',
+            'required'  => true,
+        ),
+        'select'    => array(
+            'class'     => 'input-small',
+        ),
+        'textAp'    => array(
+            'class'         => 'span2',
+            'prependIcon'   => 'icon-heart',
+        ),
+    ),
+);
+//Form object
+$form           = $this->form;
+//Form type - one of the Twitter Bootstrap form types (horizontal, vertical, inline, search)
+//To set the form type, use the \DluTwBootstrap\Form\FormUtil::FORM_TYPE_... constants
+//The form type will be usually set here in the view script (to reuse the same view script/action controller method,
+//this demo sets the form type in the action controller)
+$formType       = $this->formType;
+//Validated data (if any)
+$validData      = $this->validData;
+/* @var $form \DluTwBootstrapDemo\Form\InlineForm */
+$form->prepare();
+if ($form->getMessages()):
+    ?>
+<div class="alert alert-error">
+    <button class="close" data-dismiss="alert" type="button">×</button>
+    <strong>Invalid input!</strong>
+    The form fields are not filled out correctly. (The inline form does not support field errors.
+    Use $form->getMessages() to inform user about data errors.)
+</div>
+<?php
+    \Zend\Debug\Debug::dump($form->getMessages(), '$form->getMessages():');
+    elseif ($validData): ?>
+<div class="alert alert-success">
+    <button class="close" data-dismiss="alert" type="button">×</button>
+    <strong>Form data is valid!</strong>
+    The following data has been received from the form.
+</div>
+<?php echo($validData); ?>
+<?php else: ?>
+<div class="alert alert-info">
+    <button class="close" data-dismiss="alert" type="button">×</button>
+    <strong>Submit the form:</strong>
+    Submit the form to see the validated values. (The inline form does not support field errors.)
+</div>
+<?php
+endif;
+
+//Default form display (the 'one-liner')
+//Good for quick form preview or when there are no special presentation requirements
+//If you need more control over the form view, use the 'controlled' approach below
+echo $this->formTwb($form, $formType, $displayOptions);
+
+//Controlled form display
+//Please see the Horizontal form demo for an example of the controlled form display
+?>
