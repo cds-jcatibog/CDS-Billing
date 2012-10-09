@@ -1,13 +1,11 @@
 <?php
 return array(
 	'modules' => array(
+		'Application',
 		'DluTwBootstrap',
 		'DluTwBootstrapDemo',
-		'AnalyticsAPI',
-		'Application',
 		'ZfcBase',
 		'ZfcUser',
-		'CdliTwoStageSignup',
 		'Analytics',
 		'Basecamp',
 		'Clients',
