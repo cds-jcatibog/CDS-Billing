@@ -7,12 +7,11 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Analytics\Controller;
+namespace ZendSkeletonModule\Controller;
 
-use Analytics\Controller\ReportController;
 use Zend\Mvc\Controller\AbstractActionController;
 
-class ReportController extends AbstractActionController
+class SkeletonController extends AbstractActionController
 {
     public function indexAction()
     {

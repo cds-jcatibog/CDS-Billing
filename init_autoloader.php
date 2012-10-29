@@ -21,7 +21,12 @@ if (file_exists('vendor/autoload.php')) {
 	$loader = include 'vendor/autoload.php';
 }
 
-$zf2Path = '/var/vwebs/'.$_SERVER['SERVER_NAME'].'/zf2/library';
+if ($_SERVER['SERVER_NAME'] == 'localhost') {
+	$zf2Path = '/var/www/html/libs/zf2/library';
+} else {
+	$zf2Path = '/var/vwebs/'.$_SERVER['SERVER_NAME'].'/zf2/library';
+}
+
 if ($zf2Path) {
 	if (isset($loader)) {
 		$loader->add('Zend', $zf2Path . '/Zend');
